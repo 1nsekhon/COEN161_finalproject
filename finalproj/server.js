@@ -21,9 +21,8 @@ client.connect(err => {
 
   //let db = client.db("finalproj");
   //console.log("db: ", db);
- /* const collection = client.db("finalproj").collection("users");
-  console.log("connection: ", collection.find().pretty());*/
-  //collection.insertOne({name: "test", emailID: "test@gmail.com"});
+  const collection = client.db("finalproj").collection("users");
+  collection.insertOne({name: "test", emailID: "test@gmail.com"});
   
   
   // perform actions on the collection object
@@ -131,7 +130,7 @@ const requestListener = function (req, res) {
     }
   
 };
-/*fs.readFile(path.join(__dirname, "mongo.config.json"), "utf-8")
+fs.readFile(path.join(__dirname, "mongo.config.json"), "utf-8")
   .then((contents) => {
     const mongoConfig = JSON.parse(contents);
 
