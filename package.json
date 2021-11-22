@@ -1,0 +1,23 @@
+{
+  "name": "coen161_finalproject",
+  "version": "1.0.0",
+  "description": "Puzzle Game that allows you to put together photos of endangered animals and learn more about them",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1nsekhon/COEN161_finalproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1nsekhon/COEN161_finalproject/issues"
+  },
+  "homepage": "https://github.com/1nsekhon/COEN161_finalproject#readme",
+  "dependencies": {
+    "mongo": "^0.1.0",
+    "mongodb": "^4.2.0"
+  }
+}

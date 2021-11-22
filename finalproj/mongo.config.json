@@ -1,0 +1,8 @@
+{
+    "scheme": "mongodb+srv://dbUser",
+    "address": "cluster0.i5fcw.mongodb.net",
+    "defaultDatabase": "finalproj",
+    "username": "dbUser",
+    "password": "Goo92pre"
+  }
+  
