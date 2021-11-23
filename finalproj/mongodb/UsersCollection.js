@@ -37,4 +37,4 @@ const UsersCollection = (client) => {
   };
 };
 
-module.exports = TermsCollection;
+module.exports = UsersCollection;

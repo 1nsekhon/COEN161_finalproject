@@ -5,4 +5,4 @@ const User = ({name, emailId}) => {
     };
   };
   
-  module.exports = Name;
+  module.exports = User;

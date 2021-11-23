@@ -1,33 +1,49 @@
 const { MongoClient } = require('mongodb');
 const http = require("http");
 const pathToRegexp = require("path-to-regexp");
-const NodeCache = require("node-cache");
 const Routes = require("./scripts");
 const fs = require("fs/promises");
 const path = require("path");
-//const usersCollection = require("UsersCollection");
+const UsersCollection = require("./mongodb/UsersCollection");
 //const Images = require("./images");
 // const myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
-const uri = "mongodb+srv://dbUser:Goo92pre@cluster0.i5fcw.mongodb.net/finalproj?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  if (err){
-    console.log("error");
-   // throw err;
-  }
-  else {
+async function connect(){
+  const uri = "mongodb+srv://dbUser:Goo92pre@cluster0.i5fcw.mongodb.net/finalproj?retryWrites=true&w=majority";
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    let server = http.createServer(requestListener);
+    server.listen(8080);
+
     console.log("connect");
+  }catch(err){
+    console.error(err);
+  }finally{
+    await client.close();
   }
+
+    /*client.connect(err => {
+      if (err){
+        console.log("error");
+      // throw err;
+      }
+      else {
+        console.log("connect");
+      }*/
+
+}
+
 
   //let db = client.db("finalproj");
   //console.log("db: ", db);
-  const collection = client.db("finalproj").collection("users");
-  collection.insertOne({name: "test", emailID: "test@gmail.com"});
+  
+  //const collection = client.db("finalproj").collection("users");
+  //collection.insertOne({name: "test", emailID: "test@gmail.com"});
   
   
   // perform actions on the collection object
   //client.close();
-});/*.then(() =>{
+/*});.then(() =>{
   
 }).catch((err)=>{
   console.log("error: " , err);
@@ -40,32 +56,18 @@ let cache = {};
    "/": Routes.home,
    "/public": Routes.public,
    "/puzzle1": Routes.puzzle1,
-   "/puzzle2": Routes.puzzle2
+   "/puzzle2": Routes.puzzle2,
+ 
  }
 
-/**
- * @function routeRequest
- * @description Given a request object from Node.js, returns
- *              a handler function to call. Also assigns the
- *              req.params object to any parameters in the request.
- *              For parsing parameters in a URL, it should use
- *              the path-to-regexp library - https://github.com/pillarjs/path-to-regexp
- * @param {http.ClientRequest} req - The http.ClientRequest to route
- * @returns {function(http.ClientRequest, httpClientResponse)} a request handler
- */
+
 const routeRequest = function (req) {
-  /**
-   * Take the routeRequest function from homeework and it should roughly
-   * work in here. You might have to change somee things around.
-   */
+
   let path = req.url;
   
   let keys = Object.keys(routingTable);
   console.log(path);
 
-  // if(path.startsWith("/public")){
-  //   return routingTable["/public"];
-  // }
 
   for (let key of keys){
     //use pathToRegxp to match key of routingTable with url 
@@ -82,29 +84,20 @@ const routeRequest = function (req) {
   return routingTable["/public"];
 };
 
-/**
- * @function requestListener
- * @description Routes the http.ClientRequest based on the pathname. This will
- *              be siimilar to classwork we do in Week 5.
- *
- * @param {http.ClientRequest} req - The http.ClientRequest to route
- * @param {http.ServerResponse} res - the http.ServerResponse that will be sent
- *
- * @returns
- */
+ 
 const requestListener = function (req, res) { 
   console.log("Listening");
-  /**
-   * Take the body of the anonymous function returned from the requestListener homework
-   * and paste it into here. You want the code  that starts with reteurn function(reeq, res)
-   */
+  
     const staticFilesDirectory = process.argv[2]; //will be passed in as a command line argument
     
     //create object that stores contents for staticFilesDir and cache
     req.app = {
       "staticFilesDirectory": staticFilesDirectory,
-      "cache": cache
+      "cache": cache,
+      //"db": UsersCollection(client),
     };
+
+   
 
     //contents of cache
     cachedBody = req.app.cache[req.url];
@@ -127,25 +120,21 @@ const requestListener = function (req, res) {
         console.log("Req url=", req.url)
         routereq(req,res);
       }
+      
     }
   
 };
 fs.readFile(path.join(__dirname, "mongo.config.json"), "utf-8")
   .then((contents) => {
     const mongoConfig = JSON.parse(contents);
-
-    const uri = [
-      mongoConfig.scheme,
-      `${mongoConfig.username}:${mongoConfig.password}`,
-      `@${mongoConfig.address}/${mongoConfig.defaultDatabase}`,
-      "?retryWrites=true&w=majority",
-    ].join("");
-
+    console.log("parsed");
+    const uri = "mongodb+srv://dbUser:Goo92pre@cluster0.i5fcw.mongodb.net/finalproj?retryWrites=true&w=majority";
+    console.log("success obtaining uri");
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    
+    console.log("client defined");
     return client.connect().then(() => {
       console.log("connect");
       return {
@@ -156,9 +145,10 @@ fs.readFile(path.join(__dirname, "mongo.config.json"), "utf-8")
   .catch((err) => {
     console.log("error");
     if (err.code === "ENOENT") {
+      console.log("ENOENT");
       return {
-        glossary: {},
-        file: "dictionary.json",
+        userInfo: {},
+        file: "userInformation.json",
       };
     }
 
@@ -169,31 +159,23 @@ fs.readFile(path.join(__dirname, "mongo.config.json"), "utf-8")
 
     console.error(err);
     process.exit(1);
-  });
-  /*.then(() => {
+  })
+  .then(() => {
     const server = http.createServer(requestListener);
     server.listen(8080);
-});*/
+});
 // This block only gets run when you invoke this as "node server.js <args>"
 // This block will NOT be run when you use "npm run grade".
 if (require.main === module) {
-  /**
-   * @task Make sure that you take in 1 command line argument
-   * which specifies where all the static files are.
-   */
+
   if (process.argv.length < 3){
     console.error("need more arguments");
     process.exit(1);
   } 
+  //connect().catch(console.error);
 
-  /**
-   * @task Create and start a server using `http.createServer`. If
-   * the request has  a url field, route it using the Routing Table
-   * created about. If it doesn't exist, send a 404
-   */
-  let server = http.createServer(requestListener);
-  server.listen(8080);
-
+ /*let server = http.createServer(requestListener);
+  server.listen(8080);*/
 }
 
 module.exports = { requestListener };
