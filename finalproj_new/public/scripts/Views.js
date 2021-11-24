@@ -8,12 +8,14 @@ const Views = {
       const dataList = document.querySelector("dl");
       const dataTerm = document.createElement("dt");
       const dataDefinition = document.createElement("dd");
-  
-      dataTerm.textContent = name;
-      dataDefinition.textContent = email;
-  
+      console.log("IN HERE");
+      dataTerm.textContent = "Thanks, " + name + "!";
+      //dataDefinition.textContent = email;
+
       dataList.appendChild(dataTerm);
-      dataList.appendChild(dataDefinition);
+  
+      /*dataList.appendChild(dataTerm);
+      dataList.appendChild(dataDefinition);*/
     },
     onSubmit: (event) => {
         event.preventDefault();
@@ -26,6 +28,7 @@ const Views = {
     
         if (name && email) {
           API.createUser(name, email);
+          Views.createUserElement(name, email);
         }
       },
 

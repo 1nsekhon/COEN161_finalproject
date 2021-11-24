@@ -17,8 +17,7 @@ const VIEWS = {
     document
       .querySelector("#next-page-button")
       .addEventListener("click", API.getNextPage);
-    //API.listTerms();
-    //VIEWS.createTermElement("Tim", "Computer Science Tutor");
+
   },
   clearForm: () => {
     const termElement = document.querySelector("#term");

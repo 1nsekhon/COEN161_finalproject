@@ -1,8 +1,8 @@
-const User = ({name, emailId}) => {
+const User = ({name, email}) => {
     return {
       __type: "User",
       name,
-      emailId,
+      email
     };
   };
   

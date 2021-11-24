@@ -7,31 +7,31 @@ const FIND_LIMIT = 10;
 const UsersCollection = (client) => {
   const collection = client.db("finalproj").collection("users");
   return {
-    createUser: ({ name, emailID }) => {
+    createUser: ({ name, email }) => {
       const document = UserDocument({
         name,
-        emailID,
+        email,
       });
       return collection.insertOne(document).then(() => {
         return document;
       });
     },
-    getTermByWord: (name) => {
-      //console.log("GET TERMS BY: " + word);
+    getTermByName: (name) => {
+      console.log("GET TERMS BY: " + name);
       return collection.findOne({
-        normalizedName: normalizeTerm(name)
+        normalizeTerm: normalizeTerm(name)
       }).then((result)=> {
         console.log(result);
         return result;
       });
     },
-    getTerms: () => {
+    /*getTerms: () => {
       return collection.findMany({}).then(result => {
         return result;
       });/*.find().then((result)=> {
         return result;
       });*/
-    },
+   // },
     getTermsByLecture: (lecture) => {
       /**
        * code this one

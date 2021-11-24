@@ -19,7 +19,7 @@ const API = {
         })
         .then(API.handleResponse)
         .then((termResponse) => {
-            Views.createUserElement(termResponse.name, termResponse.email);
+           // Views.createUserElement(termResponse.name, termResponse.email);
           });
 
         

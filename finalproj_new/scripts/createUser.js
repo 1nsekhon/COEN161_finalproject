@@ -16,7 +16,7 @@ const createUser = (req, res) => {
 
     const user = {
       name: body.name,
-      email: [body.email],
+      email: body.email,
     };
 
 
