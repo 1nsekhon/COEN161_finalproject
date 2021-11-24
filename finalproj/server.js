@@ -57,6 +57,10 @@ let cache = {};
    "/public": Routes.public,
    "/puzzle1": Routes.puzzle1,
    "/puzzle2": Routes.puzzle2,
+   "/form": Routes.form,
+   "/term": {
+    POST: Routes.createUser,
+   }
  
  }
 

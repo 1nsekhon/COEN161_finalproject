@@ -21,6 +21,7 @@ const serveFolder = function (req, res) {
         ...pathElements.slice(pathElements.indexOf("public")+1)
       );
   
+      console.log(requestedFile);
       if(!requestedFile){
         console.log("Could not find file")
         res.writeHead(404);
@@ -37,6 +38,7 @@ const serveFolder = function (req, res) {
     
     .then(function(data){
       //send 200 response and write data (file contents)
+      console.log(data);
       res.writeHead(200);
       res.write(data);
       res.end();

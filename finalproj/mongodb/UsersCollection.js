@@ -6,10 +6,10 @@ const FIND_LIMIT = 10;
 const UsersCollection = (client) => {
   const collection = client.db("finalproj").collection("users");
   return {
-    createUser: ({ name, emailId }) => { //post
+    createUser: ({ name, email }) => { //post
       const document = user({
         name,
-        emailId,
+        email,
       });
       return collection.insertOne(document).then(() => {
         document;
@@ -20,9 +20,9 @@ const UsersCollection = (client) => {
         name: userName,
       });
     },
-    getUserByEmailId: (userEmailId) => {
+    getUserByEmailId: (useremail) => {
      return collection.findOne({
-       emailId: userEmailId,
+       emailId: useremail,
      })
     },
     /*updateTermByWord: (word) => {

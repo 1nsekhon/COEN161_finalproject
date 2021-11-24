@@ -5,12 +5,12 @@ const API = {
     handleResponse: (response)=>{
         return response.ok ? response.json(): Promise.error(response.status)
     },
-    createUser: (name, emailID) =>{
+    createUser: (name, email) =>{
         return fetch ("/user", {
             method: "POST", 
             body: JSON.stringify({
                 name, 
-                emailID
+                email
 
             }),
             headers: {
