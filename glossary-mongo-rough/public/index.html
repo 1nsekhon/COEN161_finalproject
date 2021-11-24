@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>COEN161 Glossary</title>
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Slabo+27px&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link href="./styles/index.css" rel="stylesheet" />
+    <script defer src="./scripts/api.js"></script>
+    <script defer src="./scripts/views.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="glossary">Glossary</h1>
+      </header>
+      <form>
+        <section>
+          <input id="term" type="text" />
+          <label for="term"> Term </label>
+        </section>
+        <section>
+          <textarea id="definition" rows="2"> </textarea>
+          <label for="definition"> Definition </label>
+        </section>
+        <button id="submit">Submit</button>
+      </form>
+      <dl></dl>
+      <footer>
+        <section>
+          <button class="icon" id="previous-page-button">
+            <img src="./assets/chevron-left.svg" alt="Get previous 10 terms" />
+          </button>
+          <button class="icon" id="next-page-button">
+            <img src="./assets/chevron-right.svg" alt="Get next 10 terms" />
+          </button>
+        </section>
+        <button class="icon">
+          <a href="#glossary">
+            <img src="./assets/arrow-up.svg" alt="Back to the top" />
+          </a>
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>

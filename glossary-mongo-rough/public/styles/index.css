@@ -1,0 +1,113 @@
+body {
+  width: 60%;
+  margin: auto;
+  min-width: 340px;
+  max-width: 1140px;
+  font-size: 12px;
+  padding: 3rem 1rem;
+}
+
+h1,
+label,
+button,
+dt {
+  font-family: "Inter", sans-serif;
+}
+
+body,
+input,
+dd,
+textarea {
+  font-family: "Slabo 27px", serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}
+
+form input,
+form textarea,
+form button {
+  border-radius: 2px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+form section {
+  display: flex;
+  flex-flow: column-reverse;
+  width: 100%;
+}
+
+form label {
+  color: #aaa;
+  margin-bottom: 0.1rem;
+}
+
+form *:focus + label {
+  color: #8e44ad;
+}
+
+form input#term {
+  max-width: 15rem;
+  margin-bottom: 1rem;
+}
+
+form input.error,
+form textarea.error {
+  border-color: #e74c3c;
+}
+
+form *.error + label {
+  color: #e74c3c;
+}
+
+form textarea#definition {
+  font-size: 0.8rem;
+}
+
+form button {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  align-self: flex-end;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+dl {
+  margin-top: 2rem;
+}
+
+dt {
+  font-size: 1.2rem;
+}
+
+dd {
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+dl footer {
+  margin-top: 2rem;
+}

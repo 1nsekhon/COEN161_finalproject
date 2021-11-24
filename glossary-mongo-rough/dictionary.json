@@ -1,0 +1,54 @@
+{
+  "http": {
+    "word": "HTTP",
+    "definition": "Acronym for Hyper Text Transfer Protocol. It is the common language all servers on the world wide web speak."
+  },
+  "callback function": {
+    "word": "Callback Function",
+    "definition": "A function that is meant to be called during the invocation of another function. A callback function must be passed as a parameter."
+  },
+  "higher order function": {
+    "word": "Higher Order Function",
+    "definition": "A function that either takes another function as a parameter or returns a function"
+  },
+  "node.js": {
+    "word": "Node.js",
+    "definition": "A JavaScript runtime that can be used to create CLI based applications and servers."
+  },
+  "header": {
+    "word": "Header",
+    "definition": "Arbitrary key value pairs attached to an HTTP request. Headers allow HTTP to be an extensible protocol."
+  },
+  "database": {
+    "word": "Database",
+    "definition": "Any organized collection of data (including a JSON file). Usually when people use this term, they're referring to a Database Management System."
+  },
+  "dbms": {
+    "word": "DBMS",
+    "definition": "Acronym for DataBase Management System. Any software that handles the storage, retrieval, and updating of data"
+  },
+  "cors": {
+    "word": "CORS",
+    "definition": "Acronym for Cross-Origin Resource Sharing. CORS is a set of directives that inform browsers which resources are allowed to be fetch-ed from any remote origin. It usually means the set of headers starting with Access-Control-*."
+  },
+  "fetch": {
+    "word": "fetch",
+    "definition": "Browser based API used to make HTTP requests after a page has loaded. fetch is a Promise based API that supersedes the older XMLHttpRequest API."
+  },
+  "http client": {
+    "word": "HTTP Client",
+    "definition": "Any program that initiates a request to an HTTP Server"
+  },
+  "http server": {
+    "word": "HTTP Server",
+    "definition": "A program that listens for incoming HTTP requests."
+  },
+  "http method": {
+    "word": "HTTP Method",
+    "definition": "A verb used to describe the operation expected in an HTTP request"
+  },
+  "http get request": {
+    "word": "HTTP GET Request",
+    "definition": "HTTP Request Method used to Read information from a server. GET requests are cacheable and idempotent"
+  }
+}

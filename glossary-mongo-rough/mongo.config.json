@@ -1,0 +1,7 @@
+{
+  "scheme": "mongodb+srv://",
+  "address": "cluster0.i5fcw.mongodb.net",
+  "defaultDatabase": "profsDB",
+  "username": "dbUser",
+  "password": "Goo92pre"
+}

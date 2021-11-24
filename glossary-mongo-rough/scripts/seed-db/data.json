@@ -1,0 +1,91 @@
+[
+  {
+    "word": "HTTP Client",
+    "definitions": ["Any program that sends an HTTP request."],
+    "tags": ["http"]
+  },
+  {
+    "word": "HTTP Server",
+    "definitions": [
+      "Any program that can listen to and respond to an HTTP request on a network."
+    ],
+    "tags": ["http"]
+  },
+  {
+    "word": "Callback Queue",
+    "definitions": [
+      "A queue of functions to be executed by the JavaScript engine after the call stack has been exhausted"
+    ],
+    "tags": ["data-structures", "js-internals"]
+  },
+  {
+    "word": "HTML",
+    "definitions": [
+      "A declarative language used to provide structure for a text document."
+    ],
+    "tags": ["languages", "front-end"],
+    "acryonm": "HyperText Markup Language"
+  },
+  {
+    "word": "CSS",
+    "definitions": ["A language used to style HTML documents in the browser."],
+    "tags": ["languages", "front-end"],
+    "acryonm": "Cascading Style Sheet"
+  },
+  {
+    "word": "Call Stack",
+    "definitions": [
+      "The current stack of functions for the JavaScript engine to evaluate"
+    ],
+    "tags": ["data-structures", "js-internals"]
+  },
+  {
+    "word": "HTTP",
+    "definitions": [
+      "A text based protocol used to exchange information over the Web"
+    ],
+    "tags": ["languages", "http"],
+    "acryonm": "HyperText Transfer Protocol"
+  },
+  {
+    "word": "HTTP Header",
+    "definitions": [
+      "A key value pair transferred before the HTTP body that allows arbitrary metadata to be sent with an HTTP Request or Response"
+    ],
+    "tags": ["http"]
+  },
+  {
+    "word": "MongoDB",
+    "definitions": [
+      "An open-source document-oriented database management system."
+    ],
+    "tags": ["db", "database"]
+  },
+  {
+    "word": "Database",
+    "definitions": ["A collection of organized data."],
+    "tags": ["db", "database"]
+  },
+  {
+    "word": "DBMS",
+    "definitions": [
+      "Software which abstracts the retrival, creation, and updating of data in a database."
+    ],
+    "tags": ["db", "database"],
+    "acryonm": "Database Management System"
+  },
+  {
+    "word": "fetch",
+    "definitions": [
+      "A browser-based API that lets users send arbitrary HTTP requests"
+    ],
+    "tags": ["js", "front-end", "library", "http"]
+  },
+  {
+    "word": "fs",
+    "definitions": [
+      "A node.js standard library that let's a program to communicate with the File System"
+    ],
+    "tags": ["js", "backend", "node.js", "node", "library"]
+  }
+]
