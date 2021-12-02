@@ -1,4 +1,4 @@
-const User = require("./user");
+//const User = require("./user");
 const normalizeTerm = require("./normalizeTerm");
 
 const userDocument = ({ name, email}) => {

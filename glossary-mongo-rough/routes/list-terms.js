@@ -9,9 +9,11 @@ const getTerms = (req, res) => {
   const upperBound = lowerBound + (parseInt(query.limit, 10) || DEFAULT_LIMIT);
 
   const terms = [];
-  //const allTerms = Object.values(req.app.glossary);
-  //console.log(allTerms);
-  //console.log(req.app.glossary)
+  console.log(req.app.db);
+  console.log("HELLO")
+  const allTerms = Object.values(req.app.db.getTerms());
+ 
+  
   /*for (let i = lowerBound; i < upperBound; i++) {
     if (i >= allTerms.length) {
       break;
@@ -19,16 +21,16 @@ const getTerms = (req, res) => {
     terms.push(allTerms[i]);
   }*/
 
-  /*return req.app.db.getTerms().then((newTerm) => {
-    return sendResponse(res, 201, JSON.stringify(newTerm));
-  });*/
-  /*return sendResponse(res, 200, {
-    terms,
-    pagination: {
-      hasNextPage: upperBound < allTerms.length,
-      hasPreviousPage: lowerBound > 0,
-    },
-  });*/
+  console.log(allTerms);
+  console.log(terms);
+
+ return req.app.db.getTerms().then((allTerms)=> {
+    return sendResponse(res, 200, {
+    allTerms,
+  
+  });
+  })
+
 };
 
 module.exports = getTerms;

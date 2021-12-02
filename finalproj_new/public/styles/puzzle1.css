@@ -12,9 +12,9 @@ main::img{
     width: 20px;
 }
 .container {
-    border: solid;
-    width: 500px;
-    height: 500px;
+    border: white solid;
+    width: 486px;
+    height: 486px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -47,22 +47,12 @@ main::img{
     height: 240px;
 }
 .piece {
-    background-color: black;
-    border: 1px pink solid;
+    background-color: whitesmoke;
+    border: 1px white solid;
     width: 240px;
     height: 240px;
     display: flex;
 
     align-items: center;
     justify-content: center;
-}
-.item {
-    font-size: 128px;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 150px;
-    height: 150px;
-    background-color: #C0C0C0;
-    color: #FFF;
-    text-align: center;
-    user-select: none;
 }

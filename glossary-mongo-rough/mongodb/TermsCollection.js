@@ -28,18 +28,31 @@ const TermsCollection = (client) => {
         return result;
       });
     },
-    /*getTerms: () => {
-      return collection.findMany({}).then(result => {
+    getTerms: () => {
+      return collection
+      .find()
+      .toArray()
+      .then((words) => {
+        console.log(`getAllTerms::returning ${words.length} items`);
+        let item = [];
+        for (word of words){
+          //console.log("word: ", word);
+          item.push(word.word);
+        }
+        //console.log(word[0].word);
+        //console.log(item);
+        console.log("item: ", item);
+        return { item };
+      });
+    }/*.find().then((result)=> {
         return result;
-      });/*.find().then((result)=> {
-        return result;
-      });*/
+      });
    // },
     getTermsByLecture: (lecture) => {
       /**
        * code this one
        */
-    },
+    ,
     updateTermByWord: (word) => {
       /**
        * code this one too :D

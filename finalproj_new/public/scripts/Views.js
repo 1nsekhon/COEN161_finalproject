@@ -5,11 +5,11 @@ const Views = {
 
     },
     createUserElement: (name, email) => {
+      if(!name){ return; }
       const dataList = document.querySelector("dl");
       const dataTerm = document.createElement("dt");
       const dataDefinition = document.createElement("dd");
-      console.log("IN HERE");
-      dataTerm.textContent = "Thanks, " + name + "!";
+      dataTerm.textContent = "Thanks, " + name.split(" ")[0] + "!";
       //dataDefinition.textContent = email;
 
       dataList.appendChild(dataTerm);
@@ -29,6 +29,7 @@ const Views = {
         if (name && email) {
           API.createUser(name, email);
           Views.createUserElement(name, email);
+          API.getUser(name);
         }
       },
 

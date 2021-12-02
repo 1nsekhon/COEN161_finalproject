@@ -12,6 +12,7 @@ const API = {
       .then(API.handleResponse)
       .then((termsResponse) => {
         for (const term of termsResponse.terms) {
+          console.log("term", term);
           VIEWS.createTermElement(term.word, term.definition);
         }
 

@@ -16,7 +16,7 @@ const UsersCollection = (client) => {
         return document;
       });
     },
-    getTermByName: (name) => {
+    getUserByName: (name) => {
       console.log("GET TERMS BY: " + name);
       return collection.findOne({
         normalizeTerm: normalizeTerm(name)
@@ -25,27 +25,8 @@ const UsersCollection = (client) => {
         return result;
       });
     },
-    /*getTerms: () => {
-      return collection.findMany({}).then(result => {
-        return result;
-      });/*.find().then((result)=> {
-        return result;
-      });*/
-   // },
-    getTermsByLecture: (lecture) => {
-      /**
-       * code this one
-       */
-    },
-    updateTermByWord: (word) => {
-      /**
-       * code this one too :D
-       */
-    },
-    dropAll: () => {
-      return collection.deleteMany();
-    },
-    //updat,
+    
+    
   };
 };
 

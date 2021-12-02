@@ -63,6 +63,7 @@ const VIEWS = {
 
     const term = termElement.value.trim();
     const definition = definitionElement.value.trim();
+    
 
     if (!term) {
       VIEWS.addErrorState(termElement);
@@ -75,6 +76,7 @@ const VIEWS = {
     if (term && definition) {
       API.createTerm(term, definition);
       VIEWS.createTermElement(term, definition);
+      API.listTerms();
     }
   },
 };
