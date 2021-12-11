@@ -1,57 +1,91 @@
 html {
-    font-size: 1-px;
-  }
-  
+  font-size: 5-px;
+}
+
 
 body {
-  background-color: #9CAF88;
+background-color: #9CAF88;
 }
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    left: 50%;
-    top: 50%;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-
-    margin: -35px 0 0 -35px;
-    background-color: #9CAF88;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  padding-top: 5spx;
+  color: white;
+  margin: -35px 0 0 -35px;
+  background-color: #9CAF88;
 }
 header {
-  display: flex;
-  flex-direction: row;
-  width: 100;
-  border-color: black;
-  padding-left: 50px;
-  padding-top:28px;
-  padding-bottom: 32px;
-  align-items: bottom;
-  background-color: #9CAF88;
-  
+width: 100;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+padding-left: 50px;
+padding-top:28px;
+padding-bottom: 5px;
+align-items: bottom;
+background-color: #9CAF88;
+
 }
+
+#blurb {
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 25px;
+color: white;
+font-weight: 700;
+display: flex;
+padding-top: 50px;
+align-items: center;
+flex-direction: column;
+}
+
+#indexImg {
+padding-top: 50px;
+padding-left: 325px;
+padding-bottom: 50px;
+width: 350px;
+height: 275px;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+#button
+{
+padding-top: 50px;
+padding-left: 325px;
+padding-bottom: 50px;
+width: 350px;
+height: 275px;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
 #logoContainer {
-  display: flex;
-  font-family: sans-Optima;
-  font-size: 60px;
-  align-items: center;
-  color: white;
-  background-color: #9CAF88;
+display: flex;
+font-family: 'Lora', serif;;
+font-size: 60px;
+margin: auto;
+color: white;
+background-color: #9CAF88;
 
 }
 
 button {
-  width: 350px;
-  padding: 0 20px;
-  height: 78px;
-  border: 1px solid lightgray;
-  font-size: 20px;
-  font-family: serif;
-  cursor: pointer;
-  border-style: solid;
+width: 350px;
+padding: 0 20px;
+height: 78px;
+border: 1px solid lightgray;
+font-size: 20px;
+font-family: serif;
+cursor: pointer;
+border-style: solid;
 }
-
-  
