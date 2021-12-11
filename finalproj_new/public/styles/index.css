@@ -2,10 +2,10 @@ html {
   font-size: 5-px;
 }
 
-
 body {
 background-color: #9CAF88;
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -35,20 +35,9 @@ background-color: #9CAF88;
 
 }
 
-#blurb {
-font-family: Georgia, 'Times New Roman', Times, serif;
-font-size: 25px;
-color: white;
-font-weight: 700;
-display: flex;
-padding-top: 50px;
-align-items: center;
-flex-direction: column;
-}
-
 #indexImg {
 padding-top: 50px;
-padding-left: 325px;
+padding-left: 600px;
 padding-bottom: 50px;
 width: 350px;
 height: 275px;
@@ -88,4 +77,21 @@ font-size: 20px;
 font-family: serif;
 cursor: pointer;
 border-style: solid;
+}
+
+
+body p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+  flex-direction: column;
+}
+
+section
+{
+  padding-top: 50px;
 }
