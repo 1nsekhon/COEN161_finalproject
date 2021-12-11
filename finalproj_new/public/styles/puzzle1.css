@@ -61,7 +61,7 @@ main::img{
     font-family: Arial, Helvetica, sans-serif;
     width: 150px;
     height: 150px;
-    background-color: #C0C0C0;
+    background-color: blue
     color: #FFF;
     text-align: center;
     user-select: none;
