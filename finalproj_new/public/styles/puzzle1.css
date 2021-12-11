@@ -4,7 +4,7 @@ body {
 }
 .main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-right: auto;
 
     
@@ -12,13 +12,11 @@ body {
 main::img{
     width: 20px;
 }
-
 button {
     height: 40px;
     width: 50px;
     
 }
-
 .container {
     border: white solid;
     width: 486px;
@@ -29,6 +27,7 @@ button {
     padding: 10rem;
    
 }
+
 #logoContainer{ 
     font: Open-Sans;
     font-size: 30px;
@@ -56,14 +55,4 @@ button {
 
     align-items: center;
     justify-content: center;
-}
-.item {
-    font-size: 128px;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 150px;
-    height: 150px;
-    background-color: blue;
-    color: #FFF;
-    text-align: center;
-    user-select: none;
 }
