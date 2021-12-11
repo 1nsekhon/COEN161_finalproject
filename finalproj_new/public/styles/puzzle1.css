@@ -1,44 +1,61 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: #9CAF88;
 }
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-right: auto;
-
-    
+    background-color: #9CAF88;
 }
 main::img{
     width: 20px;
 }
+
 button {
-    height: 40px;
-    width: 50px;
-    
+    border: 2px solid white;
+    font-size: 15px;
+    font-family: Open Sans, sans-serif;
+    padding: 0.5rem 1rem; 
+    background: #9CAF88;
+    color:white;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: lighter;
+    padding: 1rem 2rem;
 }
+
 .container {
     border: white solid;
-    width: 486px;
+    width: 476px;
     height: 370px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 10rem;
-   
+    background-color: #9CAF88;
 }
 
-#logoContainer{ 
-    font: Open-Sans;
-    font-size: 30px;
+#logoContainer {
+    display: flex;
+    font-family: 'Lora', serif;;
+    font-size: 45px;
+    color: white;
+    background-color: #9CAF88;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
+
 .imageContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-grow: 1;
-    align-content: flex-start;
-    padding-top: 10rem;
-   
+    align-content:space-around;  
+    padding-top: 100px;
 }
 
 .image {
