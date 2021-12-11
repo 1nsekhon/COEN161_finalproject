@@ -25,4 +25,19 @@
 
     
 };
+
+const reset = document.getElementById('reset');
+reset.addEventListener("click", function (e) {
+  const images = document.getElementsByClassName('image'); //get the images from HTML 
+  let tier = document.querySelector('.main');
+  let tierContainer =  tier.getElementsByClassName("imageContainer")[0]; // this is the image tier containter 
+    for (im in gorillaImages){
+      let tempIm = document.getElementById(im);
+      tierContainer.appendChild(tempIm);  // append image to image tier container
+      
+    }
+
+  }
+  
+);
 createPiecesDropzones();

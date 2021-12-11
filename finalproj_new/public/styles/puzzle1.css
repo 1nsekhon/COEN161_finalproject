@@ -12,6 +12,13 @@ body {
 main::img{
     width: 20px;
 }
+
+button {
+    height: 40px;
+    width: 50px;
+    
+}
+
 .container {
     border: white solid;
     width: 486px;
