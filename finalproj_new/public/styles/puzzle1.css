@@ -56,3 +56,13 @@ main::img{
     align-items: center;
     justify-content: center;
 }
+.item {
+    font-size: 128px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    color: #FFF;
+    text-align: center;
+    user-select: none;
+}
